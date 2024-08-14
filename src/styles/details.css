@@ -1,0 +1,30 @@
+
+.details-container {
+    margin-top: 20px;
+}
+
+.details-container img {
+    width: 100%;
+    height: auto;
+}
+
+.details-info {
+    margin-top: 20px;
+}
+
+.details-info h5 {
+    color: #dc3545;
+}
+
+.details-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.details-info li {
+    color: #6c757d;
+}
+
+.details-info p {
+    color: #6c757d;
+}
