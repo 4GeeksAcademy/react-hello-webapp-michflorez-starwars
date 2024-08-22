@@ -18,14 +18,12 @@ const Navbar = () => {
                             Favorites
                         </a>
                         <div className="dropdown-menu" aria-labelledby="favoritesDropdown">
-                            {store.favorites.length === 0 ? (
-                                <span className="dropdown-item">No favorites yet</span>
-                            ) : (
+                            {
                                 store.favorites.map((item, index) => (
                                     <span key={index} className="dropdown-item" onClick={() => actions.removeFromFavorites(item)}>
-                                        {item.name} &times;
+                                        {item}
                                     </span>
-                                ))
+                                )
                             )}
                         </div>
                     </li>

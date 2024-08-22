@@ -13,14 +13,18 @@ const Card = ({ name, id, category }) => {
         img: `https://starwars-visualguide.com/assets/img/${category}/${id}.jpg`
     };
 
-    const isFavorite = store.favorites.some(fav => fav.uid === id);
+    const isFavorite = store.favorites.some(fav => fav === name);
 
-    const handleFavoriteToggle = () => {
+    const handleFavoriteToggle = (item) => {
+        
         if (isFavorite) {
-            actions.removeFromFavorites(item.uid);
+            actions.removeFromFavorites(item);
         } else {
             actions.addToFavorites(item);
+            console.log (isFavorite)
+            console.log(store.favorites)
         }
+       
     };
 
     // Genera la ruta según la categoría
@@ -55,7 +59,7 @@ const Card = ({ name, id, category }) => {
                     {/* Usa la función getDetailsLink para determinar la ruta correcta */}
                     <Link to={getDetailsLink(category)} className="btn btn-primary mt-auto">Details</Link>
                     <button 
-                        onClick={handleFavoriteToggle} 
+                        onClick={()=>{handleFavoriteToggle(name)} }
                         className={`btn mt-2 ${isFavorite ? "btn-danger" : "btn-warning"}`}
                     >
                         {isFavorite ? "Remove from Favorites" : "Add to Favorites"}

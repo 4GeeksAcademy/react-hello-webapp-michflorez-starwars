@@ -37,14 +37,14 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             addToFavorites: (item) => {
                 const store = getStore();
-                if (!store.favorites.some(fav => fav.uid === item.uid)) {
+                
                     setStore({ favorites: [...store.favorites, item] });
-                }
+                
             },
 
-            removeFromFavorites: (uid) => {
+            removeFromFavorites: (name) => {
                 const store = getStore();
-                setStore({ favorites: store.favorites.filter(fav => fav.uid !== uid) });
+                setStore({ favorites: store.favorites.filter(fav => fav !== name) });
             },
             addToReadLater: (item) => {
                 const store = getStore();

@@ -12,7 +12,7 @@ const DetailsVehicles = () => {
     useEffect(() => {
         
         setLoading(true);
-        fetch(`https://www.swapi.tech/api/starships/${id}`)
+        fetch(`https://www.swapi.tech/api/vehicles/${id}`)
             .then(resp => {
                 if (!resp.ok) {
                     throw new Error("Network response was not ok");
@@ -63,7 +63,7 @@ console.log(data)
                             <h5>Model</h5>
                             <p>{data.model}</p>
                         </div>
-                        <p>{data}</p>
+                       
 
                     {/*</div><div className="col-md-4">
                         <div className="col-md-4">

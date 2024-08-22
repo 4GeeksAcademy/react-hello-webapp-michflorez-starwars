@@ -30,9 +30,9 @@ const Layout = () => {
                         <Route path="/single/:theid" element={<Single />} />
                         {/* Usa la ruta correcta para los personajes */}
 
-                        <Route path="/:category/:id" element={<DetailsPeople />} />
-                        <Route path="/:category/:id" element={<DetailsPlanets />} />
-                        <Route path="/:category/:id" element={< DetailsVehicles/>} />
+                        <Route path="/people/:id" element={<DetailsPeople />} />
+                        <Route path="/planets/:id" element={<DetailsPlanets />} />
+                        <Route path="/vehicles/:id" element={< DetailsVehicles/>} />
                         <Route path="*" element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
