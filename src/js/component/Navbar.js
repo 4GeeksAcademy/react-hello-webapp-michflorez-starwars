@@ -1,11 +1,8 @@
-
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-
 const Navbar = () => {
     const { store, actions } = useContext(Context);
-
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="navbar-brand" to="/">
@@ -13,20 +10,20 @@ const Navbar = () => {
             </Link>
             <div className="collapse navbar-collapse">
                 <ul className="navbar-nav ml-auto">
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="favoritesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Favorites
-                        </a>
-                        <div className="dropdown-menu" aria-labelledby="favoritesDropdown">
-                            {
+                        </button>
+                        <ul class="dropdown-menu">
+                        {
                                 store.favorites.map((item, index) => (
-                                    <span key={index} className="dropdown-item" onClick={() => actions.removeFromFavorites(item)}>
+                                    <p key={index} className="dropdown-item" onClick={() => actions.removeFromFavorites(item)}>
                                         {item}
-                                    </span>
+                                    </p>
                                 )
                             )}
-                        </div>
-                    </li>
+                        </ul>
+                    </div>
                     <li className="nav-item">
                         <Link className="nav-link" to="/read-later">
                             Read Later
@@ -37,5 +34,4 @@ const Navbar = () => {
         </nav>
     );
 };
-
 export default Navbar;
