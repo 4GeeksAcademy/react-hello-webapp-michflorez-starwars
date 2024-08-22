@@ -15,28 +15,54 @@ const Card = ({ name, id, category }) => {
 
     const isFavorite = store.favorites.some(fav => fav.uid === id);
 
-    const handleFavorite = () => {
-        actions.toggleFavorite(item);
+    const handleFavoriteToggle = () => {
+        if (isFavorite) {
+            actions.removeFromFavorites(item.uid);
+        } else {
+            actions.addToFavorites(item);
+        }
+    };
+
+    // Genera la ruta según la categoría
+    const getDetailsLink = () => {
+        switch (category) {
+            case "people":
+                return `/people/${id}`;
+            case "planets":
+                return `/planets/${id}`;
+            case "vehicles":
+                return `/vehicles/${id}`;
+            // Agrega más categorías si es necesario
+            default:
+                return `/${category}/${id}`;
+        }
     };
 
     return (
-        <div className="card" className="d-flex justify-content-center flex-wrap" style={{ width: "18rem" }}>
-            <img src={item.img} className="card-img-top" alt={name} onError={({ currentTarget }) => {
-    currentTarget.onerror = null; // prevents looping
-    currentTarget.src="https://starwars-visualguide.com/assets/img/placeholder.jpg";
-  }}/>
-            <div className="card-body">
-                <h5 className="card-title">{name}</h5>
-                <Link to={`/${category}/${id}`} className="btn btn-primary">Details</Link>
-                <button onClick={addToFavorites} className="btn btn-warning ms-2">
-                     "Remove from Favorites" 
-                </button>
-                <button onClick={() => actions.removeFromFavorites(fav.uid)} className="btn btn-danger ms-2">
-                            Remove
-                        </button>
-                    </div>
+        <div className="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div className="card h-100">
+                <img 
+                    src={item.img} 
+                    className="card-img-top img-fluid" 
+                    alt={name} 
+                    onError={({ currentTarget }) => {
+                        currentTarget.onerror = null; 
+                        currentTarget.src="https://starwars-visualguide.com/assets/img/placeholder.jpg";
+                    }}
+                />
+                <div className="card-body d-flex flex-column">
+                    <h5 className="card-title text-center">{name}</h5>
+                    {/* Usa la función getDetailsLink para determinar la ruta correcta */}
+                    <Link to={getDetailsLink(category)} className="btn btn-primary mt-auto">Details</Link>
+                    <button 
+                        onClick={handleFavoriteToggle} 
+                        className={`btn mt-2 ${isFavorite ? "btn-danger" : "btn-warning"}`}
+                    >
+                        {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+                    </button>
+                </div>
             </div>
-        
+        </div>
     );
 };
 

@@ -30,7 +30,7 @@ export const Home = () => {
                     <Card key={index} 
                     name={vehicle.name} 
                     id={vehicle.uid}
-                    category="vehicles" />
+                    category={"vehicles"} />
                 ))}
             </div>
             <h1>Planets</h1>

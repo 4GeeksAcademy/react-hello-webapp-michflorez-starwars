@@ -1,39 +1,58 @@
+.card {
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+    max-width: 18rem; /* Tamaño máximo de la tarjeta */
+    margin: 1rem; /* Espaciado entre las tarjetas */
+    flex: 1 1 calc(25% - 2rem); /* Para distribución flexible en filas */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añadir sombra para efecto visual */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-align: center; /* Centrar texto dentro de la tarjeta */
+    padding: 1rem;
+}
+
 .card-img-top {
     height: 200px;
     object-fit: cover;
-    width: "18rem"
-
+    width: 100%;
+    border-radius: 8px 8px 0 0; /* Redondea los bordes superiores de la imagen */
 }
 
 .card-title {
+    font-size: 1.25rem; /* Asegura que el título no sea demasiado grande en pantallas pequeñas */
+    margin: 0.5rem 0;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 0.5rem;
     text-align: center;
 }
 
-.card {
-    transition: all 0.3s ease;
-    cursor: pointer;
-
-    
+/* Flexbox para un mejor ajuste y alineación de las tarjetas */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.card.expanded {
-    width: 36rem;
-    height: auto;
+/* Media queries para diferentes dispositivos */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 2rem); /* Ajuste para tablets y pantallas medianas */
+    }
 }
 
-.card .card-body {
-    transition: all 0.3s ease;
-}
-
-.card.expanded .card-body {
-    padding: 2rem;
-}
-
-.card .card-text {
-    display: none;
-    transition: all 0.3s ease;
-}
-
-.card.expanded .card-text {
-    display: block;
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 calc(100% - 2rem); /* Ajuste para teléfonos móviles */
+    }
 }
