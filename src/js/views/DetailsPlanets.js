@@ -58,30 +58,30 @@ const DetailsPlanets = () => {
                             <h5>Diameter</h5>
                             <p>{data.diameter}</p>
                         </div>
-                           {/* <div className="col-md-4">
-                            <h5>Height</h5>
-                            <p>{data.height} cm</p>
+                           <div className="col-md-4">
+                            <h5>Rotation period</h5>
+                            <p>{data.rotation_period} </p>
                         </div>
                         <div className="col-md-4">
-                            <h5>Mass</h5>
-                            <p>{data.mass} kg</p>
+                            <h5>orbital period</h5>
+                            <p>{data.orbital_period} </p>
                         </div>
                         <div className="col-md-4">
-                            <h5>Hair Color</h5>
-                            <p>{data.hair_color}</p>
+                            <h5>Gravity</h5>
+                            <p>{data.gravity}</p>
                         </div>
                         <div className="col-md-4">
-                            <h5>Skin Color</h5>
-                            <p>{data.skin_color}</p>
+                            <h5>Climate</h5>
+                            <p>{data.climate}</p>
                         </div>
                         <div className="col-md-4">
-                            <h5>Eye Color</h5>
-                            <p>{data.eye_color}</p>
+                            <h5>Terrain</h5>
+                            <p>{data.terrain}</p>
                         </div>
                         <div className="col-md-4">
-                            <h5>Birth Year</h5>
-                            <p>{data.birth_year}</p>
-                        </div> */}
+                            <h5>name</h5>
+                            <p>{data.name}</p>
+                        </div>
                     
                     </div>
                 </div>

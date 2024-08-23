@@ -65,31 +65,31 @@ console.log(data)
                         </div>
                        
 
-                    {/*</div><div className="col-md-4">
+                    </div><div className="col-md-4">
                         <div className="col-md-4">
-                            <h5>Height</h5>
-                            <p>{data.height} cm</p>
+                            <h5>Manufacturer</h5>
+                            <p>{data.manufacturer} cm</p>
                         </div>
                         <div className="col-md-4">
-                            <h5>Mass</h5>
-                            <p>{data.mass} kg</p>
+                            <h5>Cost</h5>
+                            <p>{data.cost_in_credits} kg</p>
                         </div>
                         <div className="col-md-4">
-                            <h5>Hair Color</h5>
-                            <p>{data.hair_color}</p>
+                            <h5>Crew</h5>
+                            <p>{data.crew}</p>
                         </div>
                         <div className="col-md-4">
-                            <h5>Skin Color</h5>
-                            <p>{data.skin_color}</p>
+                            <h5>Cargo capacity</h5>
+                            <p>{data.cargo_capacity}</p>
                         </div>
                         <div className="col-md-4">
-                            <h5>Eye Color</h5>
-                            <p>{data.eye_color}</p>
+                            <h5>Name</h5>
+                            <p>{data.name}</p>
                         </div>
                         <div className="col-md-4">
-                            <h5>Birth Year</h5>
-                            <p>{data.birth_year}</p>
-                        </div> */}
+                            <h5>consumables</h5>
+                            <p>{data.consumables}</p>
+                        </div> 
                     
                     </div>
                 </div>
